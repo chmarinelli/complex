@@ -27,6 +27,15 @@ export default class UserDataSource extends DataSourceAPI {
                 per_page: 5
             }
         }).then(response => {
+            // I do this because the search endpoint searches by name, username, and email.
+            // Autocomplete vuetify componente also has its own search and in some cases the name, which is the key for which autocomplete searches, sometimes does not match and does not show it.
+
+            /** Example
+             * Term: dogdog
+             * Api return [{name: 'dogdog', username: 'dogking'}, { name: 'Mario', username: 'dogdog' }] because name and username match with the term
+             * The autocomplete componente will only show object #1 because the autocomplete key is 'name' and only the name property of object #1 matches the term
+             */
+
             const data = response.data.map(x => ({...x, name: `${x.name} ~ ${x.username}`}))
 
             this.items = unionBy(this.items, data, "username");

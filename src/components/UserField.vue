@@ -4,7 +4,7 @@
 
 <script>
 import DataSourceAutocompleteField from './DataSourceAutocompleteField.vue'
-import UserDataSource from "@/core/models/business-logic/UserDataSource";
+import UserDataSource from "@/core/data-sources/business-logic/UserDataSource";
 
 export default {
   name: 'UserField',

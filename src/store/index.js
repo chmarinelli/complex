@@ -3,6 +3,13 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+/**
+ * In case the project had been larger
+ *
+ * The store could be separated into modules
+ * Have a file for the state, getters, mutations, actions
+ */
+
 export default new Vuex.Store({
   state: {
     projects: []

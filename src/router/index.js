@@ -4,6 +4,12 @@ import Layout from '@/components/Layout';
 
 Vue.use(VueRouter);
 
+/**
+ * In case the project had been larger
+ *
+ * Module paths could be added in individual files
+ */
+
 export const routes = [
   {
     path: "",
