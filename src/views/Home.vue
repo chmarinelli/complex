@@ -122,6 +122,7 @@ export default {
       if (!(await this.$refs.form.validate())) return;
       this.$store.dispatch("addProject", this.model);
       this.showSnackbar = true;
+
       this.model = {
         name: null,
         startDate: null,
@@ -130,6 +131,10 @@ export default {
         users: [],
       };
       this.$refs.form.reset();
+
+       setTimeout(() => {
+        this.$router.push({name: 'projects'});
+        }, 1800)
     },
   },
 };
